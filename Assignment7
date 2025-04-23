@@ -1,0 +1,27 @@
+Microsoft Windows [Version 10.0.26100.3775]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\user7>cd C:\john-the-ripper\john-1.9.0-jumbo-1-win64\run
+
+C:\john-the-ripper\john-1.9.0-jumbo-1-win64\run>zip2john.exe john.zip > ziphash.tx
+ver 2.0 john.zip/john.txt PKZIP Encr: cmplen=58, decmplen=46, crc=27C49C3
+C:\john-the-ripper\john-1.9.0-jumbo-1-win64\run>john.exe ziphash.tx
+Using default input encoding: UTF-8
+Loaded 1 password hash (PKZIP [32/64])
+Will run 8 OpenMP threads
+Proceeding with single, rules:Single
+Press 'q' or Ctrl-C to abort, almost any other key for status
+Warning: Only 7 candidates buffered for the current salt, minimum 8 needed for performance.
+Warning: Only 4 candidates buffered for the current salt, minimum 8 needed for performance.
+Almost done: Processing the remaining buffered candidate passwords, if any.
+Proceeding with wordlist:password.lst, rules:Wordlist
+Proceeding with incremental:ASCII
+vinod            (john.zip/john.txt)
+1g 0:00:01:16 DONE 3/3 (2025-04-23 13:25) 0.01304g/s 2343Kp/s 2343Kc/s 2343KC/s 9hp5..viuma
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed
+
+C:\john-the-ripper\john-1.9.0-jumbo-1-win64\run>john.exe --show ziphash.tx
+john.zip/john.txt:vinod:john.txt:john.zip::john.zip
+
+1 password hash cracked, 0 left
